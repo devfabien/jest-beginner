@@ -23,3 +23,8 @@ test("User should be fabien ishimwe object",() => {
 test("Regex = there is no I in team",()=>{
     expect("teaim").not.toMatch(/I/i);
 })
+
+test("Admin should be in userNames",() => {
+    const userNames=["jack","faby","john","admin"];
+    expect(userNames).toContain('admin');
+});
