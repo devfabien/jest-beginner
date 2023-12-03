@@ -21,7 +21,7 @@ test("User should be fabien ishimwe object",() => {
 });
 
 test("Regex = there is no I in team",()=>{
-    expect("teaim").not.toMatch(/I/i);
+    expect("team").not.toMatch(/I/i);
 })
 
 test("Admin should be in userNames",() => {
