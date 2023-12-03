@@ -19,3 +19,7 @@ test("Should be falsy",() => {
 test("User should be fabien ishimwe object",() => {
     expect(functions.createUser()).toEqual({firstName: "fabien" , lastName:"Ishimwe"});
 });
+
+test("Regex = there is no I in team",()=>{
+    expect("teaim").not.toMatch(/I/i);
+})
