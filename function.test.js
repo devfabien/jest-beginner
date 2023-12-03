@@ -11,3 +11,7 @@ test("Adds 2 + 2 to equal not to be 5",() => {
 test("Should be null",() => {
     expect(functions.isNull()).toBeNull();
 });
+
+test("Should be falsy",() => {
+    expect(functions.checkValue(null)).toBeFalsy();
+});
