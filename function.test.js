@@ -7,3 +7,7 @@ test("Adds 2 + 2 to equal 4",() => {
 test("Adds 2 + 2 to equal not to be 5",() => {
     expect(functions.add(2, 2)).not.toBe(5);
 });
+
+test("Should be null",() => {
+    expect(functions.isNull()).toBeNull();
+});
