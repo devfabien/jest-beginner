@@ -1,5 +1,11 @@
 const functions = require('./functions')
 
+const testStart=()=>console.log("Test starts...")
+const testClosed=()=>console.log("Test closes..")
+
+beforeEach(() => testStart());
+afterEach(() => testClosed());
+
 test("Adds 2 + 2 to equal 4",() => {
     expect(functions.add(2, 2)).toBe(4);
 });
