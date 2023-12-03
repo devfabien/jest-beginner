@@ -28,3 +28,13 @@ test("Admin should be in userNames",() => {
     const userNames=["jack","faby","john","admin"];
     expect(userNames).toContain('admin');
 });
+
+// working with async data
+
+test("Fetched user should be Leanne Graham",() => {
+    expect.assertions(1);
+    return functions.fetchUser()
+    .then(data =>{
+        expect(data.name).toEqual("Leanne Graham");
+    })
+});
