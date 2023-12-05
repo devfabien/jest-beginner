@@ -1,5 +1,11 @@
 const functions = require('./functions')
 
+const testStart=()=>console.log("Test starts...")
+const testClosed=()=>console.log("Test closes..")
+
+beforeEach(() => testStart());
+afterEach(() => testClosed());
+
 test("Adds 2 + 2 to equal 4",() => {
     expect(functions.add(2, 2)).toBe(4);
 });
@@ -21,10 +27,26 @@ test("User should be fabien ishimwe object",() => {
 });
 
 test("Regex = there is no I in team",()=>{
-    expect("teaim").not.toMatch(/I/i);
+    expect("team").not.toMatch(/I/i);
 })
 
 test("Admin should be in userNames",() => {
     const userNames=["jack","faby","john","admin"];
     expect(userNames).toContain('admin');
+});
+
+// working with async data
+test("Fetched user should be Leanne Graham",() => {
+    expect.assertions(1);
+    return functions.fetchUser()
+    .then(data =>{
+        expect(data.name).toEqual("Leanne Graham");
+    })
+});
+
+// Async await
+test("Async Fetched user should be Leanne Graham",async () => {
+    expect.assertions(1);
+    const data= await functions.fetchUser()
+        expect(data.name).toEqual("Leanne Graham");
 });
